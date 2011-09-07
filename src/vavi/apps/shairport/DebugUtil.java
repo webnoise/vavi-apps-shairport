@@ -14,7 +14,7 @@ import android.util.Log;
 public abstract class DebugUtil {
 
     /**
-     * バグレポート　
+     * Bug Report
      */
     public static void setDebug(final Activity activity) {
         Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
@@ -36,10 +36,10 @@ Log.d("StackTraceElement", errorMessage);
                     bugReport.append(elementString + "\n");
 Log.d("StackTraceElement", stackTrace[i].getClassName());
                 }
-                bugReport.append("\n\nデバイス名： " + Build.DEVICE + "\n");
+                bugReport.append("\n\nDevice Name: " + Build.DEVICE + "\n");
                 bugReport.append("MODEL： " + Build.MODEL + "\n");
                 Log.d("model", Build.MODEL);
-                bugReport.append("Version.SDK： " + Build.VERSION.SDK + "\n");
+                bugReport.append("Version.SDK: " + Build.VERSION.SDK + "\n");
                 Intent it = new Intent();
                 it.setAction(Intent.ACTION_SENDTO);
                 it.setData(Uri.parse("mailto:"));
